@@ -1,3 +1,7 @@
+Repository : SER4PH1NX / eventhub_uts
+URL        : https://github.com/SER4PH1NX/eventhub_uts
+Branch     : main
+
 abb7b09 feat: Tambah fungsi JavaScript interaktif form pendaftaran
 c96d88d feat: Tambah struktur HTML5 dan kustom CSS
 af5cba7 Initial commit: Tambah README.md dan alur dasar web
