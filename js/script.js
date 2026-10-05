@@ -1,38 +1,28 @@
-// ========================================================
-// EVENTHUB - JS DASAR & INTERAKTIVITAS DOM (UTS WEB)
-// ========================================================
-
-// 1. STRUKTUR BIAYA EKSPLISIT (Dapat ditemukan & dipahami dosen)
 const HARGA_WORKSHOP = {
-  web: 150000,       // Front-End Web Development
-  cyber: 200000,     // Cybersecurity Essentials
-  network: 175000    // Computer Networking
+  web: 150000,       // HARGA Front-End Web Development
+  cyber: 200000,     // HARGA Cybersecurity Essentials
+  network: 175000    // HARGA Computer Networking
 };
 
 const DISKON_TIPE_PESERTA = {
-  mahasiswa: 0.20,   // Diskon 20% untuk Mahasiswa
-  umum: 0.00         // Tidak ada diskon untuk Umum
+  mahasiswa: 0.20,   // Diskon 20% utk mahasiswa
+  umum: 0.00         // g ad diskon untuk umum
 };
 
-// 2. EVENT LISTENER SAAT FORM DISUBMIT
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('formPendaftaran');
   const summaryBox = document.getElementById('ringkasanPendaftaran');
 
   if (form) {
     form.addEventListener('submit', function (event) {
-      // Prevent reload halaman
       event.preventDefault();
-
-      // Jalankan Fungsi Proses Data Form
       prosesPendaftaran();
     });
   }
 });
 
-// 3. FUNGSI UTAMA PROSES FORM (Variabel, Operator, Percabangan, Iterasi, DOM)
 function prosesPendaftaran() {
-  // --- AMBIL VALUE DARI FORM ---
+  //AMBIL VALUE DARI FORM 
   const nama = document.getElementById('nama').value.trim();
   const email = document.getElementById('email').value.trim();
   const nohp = document.getElementById('nohp').value.trim();
@@ -42,20 +32,20 @@ function prosesPendaftaran() {
   // Ambil semua checkbox workshop yang dipilih
   const workshopCheckboxes = document.querySelectorAll('input[name="workshop"]:checked');
 
-  // --- VALIDASI FORM MINIMAL ---
-  // 1. Nama tidak kosong
+  //VALIDASI FORM 
+  // 1. Nama g boleh kosong
   if (nama === "") {
     alert("Nama lengkap tidak boleh kosong!");
     return;
   }
 
-  // 2. Email terisi
+  // 2. Email harus keisi
   if (email === "") {
     alert("Alamat email tidak boleh kosong!");
     return;
   }
 
-  // 3. Nomor HP valid (minimal 10 angka)
+  // 3. Nomor HP valid (minimal 10 digit)
   if (nohp === "" || nohp.length < 10) {
     alert("Nomor HP harus valid dan minimal 10 digit!");
     return;
@@ -67,28 +57,28 @@ function prosesPendaftaran() {
     return;
   }
 
-  // 5. Minimal satu workshop dipilih
+  // 5. Minimal 1 workshop dipilih
   if (workshopCheckboxes.length === 0) {
     alert("Pilih minimal satu workshop yang ingin diikuti!");
     return;
   }
 
-  // --- PEMROSESAN DATA (PERULANGAN & PERCABANGAN) ---
+  // Proses data
   let totalBiayaKasar = 0;
   let daftarWorkshopDipilih = [];
 
-  // Perulangan (Iteration) menggunakan forEach untuk memproses checkbox
+  // Perulangan dengan forEach biar bs memproses checkbox
   workshopCheckboxes.forEach((cb) => {
     const val = cb.value;
     daftarWorkshopDipilih.push(cb.getAttribute('data-nama') || val);
 
-    // Hitung total biaya berdasarkan struktur harga
+    // Hitung total biaya 
     if (HARGA_WORKSHOP[val]) {
       totalBiayaKasar += HARGA_WORKSHOP[val];
     }
   });
 
-  // Percabangan (Branching) untuk Diskon Tipe Peserta
+  // Branching utk diskon mahasiswa atau umum
   let persenDiskon = 0;
   if (tipePeserta === "mahasiswa") {
     persenDiskon = DISKON_TIPE_PESERTA.mahasiswa;
@@ -122,7 +112,7 @@ function prosesPendaftaran() {
       </div>
     `;
     
-    // Scroll otomatis ke ringkasan
+    // untuk bs scroll otomatis ke ringkasan
     elementRingkasan.scrollIntoView({ behavior: 'smooth' });
   }
 }
