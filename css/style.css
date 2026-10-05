@@ -1,53 +1,169 @@
-/* Custom CSS Variables & Typography */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #333333;
+    line-height: 1.6;
 }
 
-/* Custom styling visual buatan sendiri (kriteria soal No. 3) */
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+
+/* SECTION TITLE */
+
 .section-title {
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .section-title::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
+
     transform: translateX(-50%);
+
     width: 60px;
     height: 3px;
+
     background-color: #0d6efd;
 }
 
-/* Box Model & Card Hover Styling */
+
+/* INOF BOX */
+
+.info-box {
+    background-color: #ffffff;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* FASILITAS */
+
+.facility-list {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.facility-list li {
+    margin-bottom: 10px;
+}
+
+
+/* WORKSHOP CARD */
+
 .custom-card {
     border: 1px solid #e0e0e0;
     border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 8px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Pseudo-class :hover */
+
+/* hover requirement */
+
 .custom-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Pseudo-class :focus */
-.form-control:focus, .form-select:focus {
+
+/* FORM */
+
+#formPendaftaran {
+    border-top: 4px solid #0d6efd !important;
+}
+
+
+/* focus requirement */
+
+.form-control:focus,
+.form-select:focus {
     border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
+    box-shadow:
+        0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-/* Media Queries untuk Layar Mobile */
+
+/* CHECKBOX / RADIO */
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+#ringkasanPendaftaran {
+    scroll-margin-top: 90px;
+}
+
+.table {
+    background-color: #ffffff;
+}
+
+footer {
+    margin-top: 0;
+}
+
+
+/* RESPONSIVE / MEDIA QUERY */
+
 @media (max-width: 768px) {
+
     .display-4 {
         font-size: 2rem;
+    }
+
+    .hero-image {
+        max-height: 250px;
+    }
+
+    .info-box {
+        padding: 20px;
+    }
+
+    #formPendaftaran {
+        padding: 20px !important;
     }
 
     #ringkasanPendaftaran {
         font-size: 0.95rem;
     }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 576px) {
+
+    .display-4 {
+        font-size: 1.8rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        max-height: 200px;
+    }
+
 }
