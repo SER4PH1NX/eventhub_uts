@@ -13,5 +13,5 @@ Browser <- HTTP Response (HTML/CSS/JS) <- Web Server
 ## Struktur Folder Proyek:
 - `css/style.css` : File stylesheet eksternal kustom
 - `js/script.js`  : Logika manipulasi DOM & penanganan event form pendaftaran.
-- `images/`       : Aaset gambar
+- `imgs/`       : Aaset gambar
 - `index.html`    : Halaman web utama 
