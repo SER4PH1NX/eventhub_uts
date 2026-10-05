@@ -3,8 +3,8 @@
 Proyek web front-end interaktif untuk pendaftaran workshop informatika dengan HTML, CSS, Bootstrap 5 & Js
 
 ## Alur:
-Browser (Client) ---> HTTP Request ---> Web Server (cnth: Live Server)
-Browser <--- HTTP Response (HTML/CSS/JS) <--- Web Server
+Browser (Client) -> HTTP Request -> Web Server (cnth: Live Server)
+Browser <- HTTP Response (HTML/CSS/JS) <- Web Server
 
 1. **Browser** kirim permintaan HTTP (Request) ke Web Server
 2. **Web Server** proses & respon dengan mengirimkan berkas statis (HTML, CSS, JS).
